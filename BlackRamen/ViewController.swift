@@ -145,15 +145,15 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.async
             {
-                self.imgProfile.layer.borderWidth = 2
-                self.imgProfile.layer.masksToBounds = false
-                self.imgProfile.layer.borderColor = UIColor.white.cgColor
+//                self.imgProfile.layer.borderWidth = 2
+//                self.imgProfile.layer.masksToBounds = false
+//                self.imgProfile.layer.borderColor = UIColor.gray.cgColor
                 
                 print("\(self.imgProfile.frame.height)")
                 print("\(self.imgProfile.frame.width)")
                 
-                //imgProfile.layer.cornerRadius = (imgProfile.frame.width - imgProfile.frame.height)
-                self.imgProfile.clipsToBounds = true
+//                self.imgProfile.layer.cornerRadius = self.imgProfile.frame.height / 2
+//                self.imgProfile.clipsToBounds = true
                 
                 self.lblPersonName.text = person.fullName
                 
