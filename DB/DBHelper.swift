@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 func GetPersonList() -> [PersonModel]
 {
@@ -120,5 +121,56 @@ func postPersonVote(personid: String, downup: VoteName, completed: @escaping (Bo
         completed(true)
     }
     
+    
+    
     task.resume()
 }
+
+
+func downloadImageFromURL(imageFileName: String, imageDataCompleted: @escaping (UIImage) -> Void)
+    {
+    
+    let personURL = URL(string: "http://192.168.8.100/VoteCasting.WebUI/personImages/\(imageFileName)")
+      //let personURL = URL(string: "http://192.168.8.100/VoteCasting.WebUI/PersonImages/1001.jpg")
+        
+        //print("\(personURL)")
+        
+    let session = URLSession(configuration: .default)
+     
+        let downloadPicTask = session.dataTask(with: personURL!) { (data, response, error
+            ) in
+            
+            if let e = error
+            {
+                print("Error downloading person picture \(e)")
+            }
+            else
+            {
+                if let res = response as? HTTPURLResponse
+                {
+                    print("Downloaded person picuture with response code \(res.statusCode)")
+                    
+                    
+                    if let imageData = data
+                    {
+                        let image = UIImage(data: imageData)
+                        
+                        imageDataCompleted(image!)
+                        
+                    }
+                    else
+                    {
+                        print("Could not get image: Image is nil")
+                    }
+                }
+                else
+                {
+                    print("Could get response code for some reason")
+                }
+            }
+            
+        }
+        
+        downloadPicTask.resume()
+        
+    }

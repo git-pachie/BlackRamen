@@ -83,13 +83,7 @@ class ViewController: UIViewController {
                     
                 })
             })
-            
-            
-            
-            
-            
-            
-            
+           
             
         }
         
@@ -164,6 +158,15 @@ class ViewController: UIViewController {
                 
                 //self.viewDidLoad()
                 //self.viewWillAppear(true)
+                
+                downloadImageFromURL(imageFileName: person.imageProfile!, imageDataCompleted: { (imagex) in
+                    
+                    DispatchQueue.main.async
+                    {
+                        self.imgProfile.image = imagex
+                        self.viewWillAppear(true)                    }
+                    
+                })
                 
                 self.viewWillAppear(true)
                 
