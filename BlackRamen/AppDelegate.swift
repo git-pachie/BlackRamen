@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         // Override point for customization after application launch.
         
         UIApplication.shared.statusBarStyle = .lightContent
-        
+        setupPushEklabooo(app: application)
         return true
     }
 
