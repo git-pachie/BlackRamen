@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C6986DD2138542D00D9E273 /* BlackRamen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlackRamen.entitlements; sourceTree = "<group>"; };
 		2B4F6F652136A2F900CB4B47 /* BlackRamen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackRamen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4F6F682136A2F900CB4B47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B4F6F6A2136A2F900CB4B47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		2B4F6F672136A2F900CB4B47 /* BlackRamen */ = {
 			isa = PBXGroup;
 			children = (
+				0C6986DD2138542D00D9E273 /* BlackRamen.entitlements */,
 				2B4F6F682136A2F900CB4B47 /* AppDelegate.swift */,
 				2B4F6F6A2136A2F900CB4B47 /* ViewController.swift */,
 				2B4F6F6C2136A2F900CB4B47 /* Main.storyboard */,
@@ -118,6 +120,14 @@
 				TargetAttributes = {
 					2B4F6F642136A2F900CB4B47 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -304,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlackRamen/BlackRamen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3F22UC8DK;
 				INFOPLIST_FILE = BlackRamen/Info.plist;
@@ -322,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlackRamen/BlackRamen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3F22UC8DK;
 				INFOPLIST_FILE = BlackRamen/Info.plist;

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -22,6 +23,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func setupPushEklabooo(app: UIApplication) ->()
+    {
+        UNUserNotificationCenter.current().requestAuthorization(options:
+            [.alert,.sound,.badge])
+        {(granted,error) in
+            if granted {
+                DispatchQueue.main.async {
+                    
+                    app.registerForRemoteNotifications()
+                }
+                
+            } else {
+                print("User notification error \(error?.localizedDescription ?? "error")")
+            }
+            
+            
+        }
+    }
+    
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Successfull registration. Your kamote token is:")
+        print(tokenToString(deviceToken: deviceToken))
+        
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register remote notification \(error.localizedDescription )")
+        
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any])
+    {
+        print(userInfo)
+    }
+    
+    func tokenToString(deviceToken: Data) -> String {
+        let bytes = [UInt8](deviceToken)
+        
+        var token = ""
+        
+        for byte in bytes
+        {
+            token += String(format: "%02x", byte)
+        }
+        
+        return token
+        
+    }
+
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
