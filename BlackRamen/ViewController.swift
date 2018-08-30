@@ -124,11 +124,11 @@ class ViewController: UIViewController {
         
         
         
-//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-//        backgroundImage.image = UIImage(named: "bg1")
-//        backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
-//        self.stkView1.insertSubview(backgroundImage, at: 0)
-//
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "bg1")
+        backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+
         
         
         
