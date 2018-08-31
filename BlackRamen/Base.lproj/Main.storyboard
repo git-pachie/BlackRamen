@@ -31,7 +31,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylv-xT-rGe">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="300"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="redraw" verticalHuggingPriority="750" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="dTE-1G-qpA">
+                                                            <imageView userInteractionEnabled="NO" contentMode="redraw" verticalHuggingPriority="750" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="dTE-1G-qpA">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="300"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="dTE-1G-qpA" secondAttribute="height" multiplier="67:60" id="bDf-JV-8ia"/>
