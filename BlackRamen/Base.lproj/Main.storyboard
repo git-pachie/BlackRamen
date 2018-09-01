@@ -7,7 +7,9 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,161 +24,156 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWG-gM-Zxh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="956"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJS-Sx-h5d">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="redraw" verticalHuggingPriority="750" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="dTE-1G-qpA">
+                                        <rect key="frame" x="62" y="28" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dTE-1G-qpA" secondAttribute="height" multiplier="1:1" id="cfj-ml-hEY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="55R-ir-YaU">
+                                        <rect key="frame" x="20" y="298" width="335" height="283"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="h3N-F9-vFK">
-                                                <rect key="frame" x="20" y="20" width="335" height="1011.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nri-AM-W6B">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="44.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylv-xT-rGe">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="300"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGb-gl-bse">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="44.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Ryan Robles">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="36" name="AmericanTypewriter-Bold"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="dDg-1Q-vxP">
+                                                <rect key="frame" x="0.0" y="54.5" width="335" height="48"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbq-gz-yAT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="48"/>
+                                                        <state key="normal" image="upvote"/>
+                                                        <connections>
+                                                            <action selector="btnUpVote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="39P-Up-0mC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pId-yZ-GCc">
+                                                        <rect key="frame" x="171" y="0.0" width="164" height="48"/>
+                                                        <state key="normal" image="downvote"/>
+                                                        <connections>
+                                                            <action selector="btnDownVote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dG0-yY-6to"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UyG-mM-bqi">
+                                                <rect key="frame" x="0.0" y="112.5" width="335" height="94.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0uk-K1-ZgV">
+                                                        <rect key="frame" x="0.0" y="5" width="167.5" height="85"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="redraw" verticalHuggingPriority="750" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="dTE-1G-qpA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="300"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="dTE-1G-qpA" secondAttribute="height" multiplier="67:60" id="bDf-JV-8ia"/>
-                                                                    <constraint firstAttribute="height" constant="300" id="wAJ-UY-tlp"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PF6-XO-jaG">
-                                                        <rect key="frame" x="0.0" y="321" width="335" height="48"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhe-wu-1J6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="48"/>
-                                                                <state key="normal" image="upvote"/>
-                                                                <connections>
-                                                                    <action selector="btnUpVote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Mc-Bn-WpZ"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGF-RS-hpe">
-                                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="48"/>
-                                                                <state key="normal" image="downvote"/>
-                                                                <connections>
-                                                                    <action selector="btnDownVote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LGh-gB-ffN"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-2m-dd4">
-                                                        <rect key="frame" x="0.0" y="390" width="335" height="45.5"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNk-tg-9I3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="45.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpI-rl-6yJ">
+                                                                <rect key="frame" x="35.5" y="0.0" width="97" height="61.5"/>
                                                                 <attributedString key="attributedText">
-                                                                    <fragment content="Ryan Robles">
+                                                                    <fragment content="123">
                                                                         <attributes>
-                                                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="0.79973779965753422" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="36" name="AmericanTypewriter-Bold"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <color key="NSColor" red="0.45344445720481169" green="0.97680455450000003" blue="0.5922655753914785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="50" name="AmericanTypewriter-Bold"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
-                                                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwh-7K-cxB">
+                                                                <rect key="frame" x="33" y="61.5" width="102" height="23.5"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Down Vote">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="20" name="AmericanTypewriter"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icW-Ia-Bvt">
-                                                        <rect key="frame" x="0.0" y="456.5" width="335" height="3"/>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="3" id="0Fg-pa-aQK"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Kc1-j2-bxS">
-                                                        <rect key="frame" x="0.0" y="480.5" width="335" height="91"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9ZH-9X-liY">
+                                                        <rect key="frame" x="167.5" y="0.0" width="167.5" height="94.5"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="6yq-tb-PjX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="91"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpY-tv-GPa">
-                                                                        <rect key="frame" x="39" y="0.0" width="90" height="55.5"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment content="120">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="48" name="AmericanTypewriter-Semibold"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up Vote Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLL-xH-M4w">
-                                                                        <rect key="frame" x="26.5" y="35.5" width="114.5" height="55.5"/>
-                                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="L8m-rF-Fye">
-                                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="91"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo6-0u-vBK">
-                                                                        <rect key="frame" x="39" y="0.0" width="90" height="55.5"/>
-                                                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="48"/>
-                                                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Down Vote Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zg-Lp-WRZ">
-                                                                        <rect key="frame" x="14" y="35.5" width="140" height="55.5"/>
-                                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miZ-W9-msR">
-                                                        <rect key="frame" x="0.0" y="592.5" width="335" height="3"/>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="3" id="yhS-T6-IiV"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <stackView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4V1-dU-7qt">
-                                                        <rect key="frame" x="0.0" y="616.5" width="335" height="395"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0f-5o-u1E">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="395"/>
-                                                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
-                                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcL-sL-bLE">
+                                                                <rect key="frame" x="29.5" y="0.0" width="108.5" height="69"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="123">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="1" green="0.21157262569377822" blue="0.22528733260896217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="56" name="AmericanTypewriter-Bold"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTO-gk-63z">
+                                                                <rect key="frame" x="43.5" y="69" width="81" height="25.5"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Up Vote">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="22" name="AmericanTypewriter"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xzv-yP-W18">
+                                                <rect key="frame" x="0.0" y="217" width="335" height="66"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6Z-u3-dQj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="66"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="This is my sample description of the person in charge of the technology. this should take care of averything">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="19" name="AmericanTypewriter"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="h3N-F9-vFK" firstAttribute="top" secondItem="DJS-Sx-h5d" secondAttribute="top" constant="20" id="FE2-qx-KYs"/>
-                                            <constraint firstItem="h3N-F9-vFK" firstAttribute="leading" secondItem="DJS-Sx-h5d" secondAttribute="leading" constant="20" id="He1-mz-a9f"/>
-                                            <constraint firstAttribute="height" constant="1000" id="gP9-Q7-PNJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="h3N-F9-vFK" secondAttribute="trailing" constant="20" id="oEO-jq-95p"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="DJS-Sx-h5d" firstAttribute="top" secondItem="JWG-gM-Zxh" secondAttribute="top" id="0sx-Xu-PRX"/>
-                                    <constraint firstAttribute="bottom" secondItem="DJS-Sx-h5d" secondAttribute="bottom" id="0uD-T6-GWG"/>
-                                    <constraint firstItem="DJS-Sx-h5d" firstAttribute="leading" secondItem="JWG-gM-Zxh" secondAttribute="leading" id="I56-xU-gB3"/>
-                                    <constraint firstAttribute="trailing" secondItem="DJS-Sx-h5d" secondAttribute="trailing" id="qgd-aW-CWa"/>
+                                    <constraint firstAttribute="bottom" secondItem="dTE-1G-qpA" secondAttribute="bottom" constant="678" id="0ig-yk-1ON"/>
+                                    <constraint firstItem="55R-ir-YaU" firstAttribute="top" secondItem="dTE-1G-qpA" secondAttribute="bottom" constant="20" id="Ida-gs-tRX"/>
+                                    <constraint firstAttribute="trailing" secondItem="55R-ir-YaU" secondAttribute="trailing" constant="20" id="a8e-j5-b8g"/>
+                                    <constraint firstItem="55R-ir-YaU" firstAttribute="leading" secondItem="JWG-gM-Zxh" secondAttribute="leading" constant="20" id="bQp-p6-zPp"/>
+                                    <constraint firstItem="dTE-1G-qpA" firstAttribute="width" secondItem="JWG-gM-Zxh" secondAttribute="width" multiplier="0.6" constant="25" id="h0j-tp-hBO"/>
+                                    <constraint firstAttribute="trailing" secondItem="dTE-1G-qpA" secondAttribute="trailing" constant="63" id="hHC-8y-23K"/>
+                                    <constraint firstItem="dTE-1G-qpA" firstAttribute="top" secondItem="JWG-gM-Zxh" secondAttribute="top" constant="28" id="iTt-yS-lye"/>
+                                    <constraint firstItem="dTE-1G-qpA" firstAttribute="centerX" secondItem="JWG-gM-Zxh" secondAttribute="centerX" id="nVd-gL-yYj"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JWG-gM-Zxh" secondAttribute="bottom" id="GOn-Zc-JRv"/>
-                            <constraint firstItem="DJS-Sx-h5d" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IaL-7F-H4b"/>
-                            <constraint firstItem="JWG-gM-Zxh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bmr-3Z-Sst"/>
+                            <constraint firstItem="JWG-gM-Zxh" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="91U-VC-MYI"/>
                             <constraint firstItem="JWG-gM-Zxh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cj8-Q2-zFc"/>
+                            <constraint firstItem="JWG-gM-Zxh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e1D-jp-U1X"/>
                             <constraint firstItem="JWG-gM-Zxh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nzE-x3-vtu"/>
+                            <constraint firstItem="JWG-gM-Zxh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zzk-dT-k7e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -185,12 +182,10 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="imgProfile" destination="dTE-1G-qpA" id="tAh-op-AYJ"/>
-                        <outlet property="lblDownVoteTotal" destination="Xo6-0u-vBK" id="jG3-E2-eFe"/>
-                        <outlet property="lblOtherDescription" destination="S0f-5o-u1E" id="3F9-FH-ygd"/>
-                        <outlet property="lblPersonName" destination="rNk-tg-9I3" id="ETH-eK-Jt6"/>
-                        <outlet property="lblUpVoteTotal" destination="PpY-tv-GPa" id="kWO-kB-B49"/>
-                        <outlet property="stkView1" destination="Ylv-xT-rGe" id="FPo-5B-Las"/>
-                        <outlet property="xView" destination="DJS-Sx-h5d" id="NRH-Lu-oJf"/>
+                        <outlet property="lblDownVoteTotal" destination="pcL-sL-bLE" id="8Aj-7U-b8q"/>
+                        <outlet property="lblOtherDescription" destination="W6Z-u3-dQj" id="z9T-mc-alG"/>
+                        <outlet property="lblPersonName" destination="wGb-gl-bse" id="g8a-dT-SHM"/>
+                        <outlet property="lblUpVoteTotal" destination="bpI-rl-6yJ" id="kYW-eS-ec2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -139,36 +139,39 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.async
             {
-//                self.imgProfile.layer.borderWidth = 2
-//                self.imgProfile.layer.masksToBounds = false
-//                self.imgProfile.layer.borderColor = UIColor.gray.cgColor
-                
+
                 print("\(self.imgProfile.frame.height)")
                 print("\(self.imgProfile.frame.width)")
-                
-//                self.imgProfile.layer.cornerRadius = self.imgProfile.frame.height / 2
-//                self.imgProfile.clipsToBounds = true
-                
+
+
+
                 self.lblPersonName.text = person.fullName
-                
+
                 self.lblUpVoteTotal.text = String(person.totalThumbsUpCount)
-                
+
                 self.lblDownVoteTotal.text = String(person.totalThumbsDownCount)
-                
-                
-                //self.viewDidLoad()
-                //self.viewWillAppear(true)
-                
+
+
+
+
                 downloadImageFromURL(imageFileName: person.imageProfile!, imageDataCompleted: { (imagex) in
-                    
+
                     DispatchQueue.main.async
                     {
                         self.imgProfile.image = imagex
                         self.viewWillAppear(true)                    }
-                    
+
                 })
-                
+
                 self.viewWillAppear(true)
+                
+                self.imgProfile.layer.cornerRadius = self.imgProfile.frame.size.width / 2;
+                self.imgProfile.clipsToBounds = true
+                
+                self.imgProfile.layer.borderWidth = 4
+                self.imgProfile.layer.borderColor = UIColor.white.cgColor
+                
+                
                 
         }
     }
